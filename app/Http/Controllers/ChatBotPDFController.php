@@ -73,7 +73,6 @@ class ChatBotPDFController extends Controller
     public function fetchChatPDFResponse(Request $request)
     {
         $cachedData = Cache::get('pdf_upload_response');
-        Log::info('Fetched sourceId from cache', ['sourceId' => $cachedData]);
         
         // Pas besoin d'accéder à stdClass, car $cachedData est une chaîne
         $srcId = $cachedData ?? null;
